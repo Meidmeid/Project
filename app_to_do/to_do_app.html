@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-do App</title>
+    <link
+      rel="stylesheet"
+      href="./bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./themify-icons-font/themify-icons.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="title">
+      <h1>♥♥♥ LET'S DO IT ♥♥♥</h1>
+    </div>
+    <div class="container">
+      <!-- Bên trái -->
+      <div class="left">
+        <!-- Tìm kiếm -->
+        <div class="search">
+          <input
+            type="search"
+            id="search-name"
+            placeholder="Search"
+            style="padding-left: 10px"
+          />
+          <div id="btn-search" class="btn" onclick="searchTask()">
+            <i class="ti-search"></i>
+          </div>
+        </div>
+
+        <!-- Thêm new task -->
+        <div
+          id="add-new"
+          data-bs-toggle="modal"
+          data-bs-target="#form"
+          class="btn"
+        >
+          <span>Add New Task</span>
+          <div id="btn-add">
+            <i class="ti-plus"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal from Bootstrap-->
+      <form
+        class="modal fade"
+        id="form"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Add New Task</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>Task Title</p>
+              <input type="text" class="form-control" name="" id="textInput" />
+              <br />
+              <p>Due Date</p>
+              <input type="date" class="form-control" name="" id="dateInput" />
+              <br />
+              <p>Description</p>
+              <textarea
+                name=""
+                class="form-control"
+                id="textarea"
+                cols="30"
+                rows="5"
+              ></textarea>
+            </div>
+            <div class="modal-select" style="width: 468px; margin: 16px">
+              <p>Status</p>
+              <select
+                id="selectInput"
+                class="form-select"
+                aria-label="Default select example"
+              >
+                <option value="">Open this select menu</option>
+                <option value="Not started">Not started</option>
+                <option value="In progress">In progress</option>
+                <option value="Completed">Completed</option>
+              </select>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="reset"
+                id="reset"
+                class="btn btn-outline-secondary"
+                hidden
+              >
+                Reset
+              </button>
+              <button type="submit" id="add" class="btn btn-outline-secondary">
+                Add
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <!-- Bên phải -->
+      <div class="right">
+        <div class="right-1" style="width: 50%">
+          <h4>Tasks</h4>
+          <div id="tasks"></div>
+        </div>
+        <div class="right-2" style="width: 50%">
+          <h4>Search</h4>
+          <div id="search"></div>
+        </div>
+      </div>
+    </div>
+    <div class="img">
+      <img src="./image/anh-dong-powerpoint-gif-hoc-tap-cute.gif" alt="" />
+    </div>
+
+    <script src="./script.js"></script>
+    <script src="./bootstrap-5.3.0-alpha1-dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
